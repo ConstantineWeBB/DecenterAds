@@ -189,56 +189,56 @@
                 var O = (D - 1) % 7,
                   F = u[O],
                   M = D - (A >= 0 ? A : 7 + A),
-                  T = new Date(n, i, M),
-                  B = f[+T],
+                  B = new Date(n, i, M),
+                  T = f[+B],
                   L = "qs-num",
-                  P = '<span class="qs-num">' + T.getDate() + "</span>",
-                  I = v && b && +T >= v && +T <= b;
+                  P = '<span class="qs-num">' + B.getDate() + "</span>",
+                  I = v && b && +B >= v && +B <= b;
                 M < 1 || M > C
                   ? ((L = "qs-empty qs-outside-current-month"),
                     o
-                      ? (B && (L += " qs-event"), (L += " qs-disabled"))
+                      ? (T && (L += " qs-event"), (L += " qs-disabled"))
                       : (P = ""))
-                  : (((l && T < l) ||
-                      (r && T > r) ||
-                      h(T) ||
+                  : (((l && B < l) ||
+                      (r && B > r) ||
+                      h(B) ||
                       c.some(function (e) {
-                        return e === +T;
+                        return e === +B;
                       }) ||
                       (d &&
                         g.some(function (e) {
                           return e === O;
                         }))) &&
                       (L = "qs-disabled"),
-                    B && (L += " qs-event"),
+                    T && (L += " qs-event"),
                     S && M === E.getDate() && (L += " qs-current"),
-                    +T == +a && (L += " qs-active"),
+                    +B == +a && (L += " qs-active"),
                     I &&
                       ((L += " qs-range-date-" + O),
                       v !== b &&
                         (L +=
-                          +T === v
+                          +B === v
                             ? " qs-range-date-start qs-active"
-                            : +T === b
+                            : +B === b
                             ? " qs-range-date-end qs-active"
                             : " qs-range-date-middle"))),
                   x.push(
                     '<div class="qs-square ' + L + " " + F + '">' + P + "</div>"
                   );
               }
-              var q = u
+              var R = u
                 .map(function (e) {
                   return '<div class="qs-square qs-day">' + e + "</div>";
                 })
                 .concat(x);
-              if (q.length % 7 != 0)
+              if (R.length % 7 != 0)
                 throw "Calendar not constructed properly. The # of squares should be a multiple of 7.";
               return (
-                q.unshift(
+                R.unshift(
                   '<div class="qs-squares' + (s ? " qs-blur" : "") + '">'
                 ),
-                q.push("</div>"),
-                q.join("")
+                R.push("</div>"),
+                R.join("")
               );
             }
             function p(e, t) {
@@ -563,12 +563,12 @@
               }
               return a && c(a), c(e), e;
             }
-            function T() {
+            function B() {
               var e = this.first ? this : this.sibling,
                 t = e.sibling;
               return { start: e.dateSelected, end: t.dateSelected };
             }
-            function B() {
+            function T() {
               var e = this.inlinePosition,
                 t = this.parent,
                 s = this.calendarContainer,
@@ -774,7 +774,7 @@
                   currentYear: (o.startDate || o.dateSelected).getFullYear(),
                   events: o.events || {},
                   setDate: D,
-                  remove: B,
+                  remove: T,
                   setMin: O,
                   setMax: F,
                   show: x,
@@ -820,8 +820,8 @@
                     (f.originalMaxDate = S),
                     (v.originalMinDate = b),
                     (v.originalMaxDate = S),
-                    (f.getRange = T),
-                    (v.getRange = T);
+                    (f.getRange = B),
+                    (v.getRange = B);
                 }
                 o.dateSelected && m(s, g);
                 var A = getComputedStyle(h).position;
@@ -3004,8 +3004,8 @@
         e.mask && (e.validate = e.mask), super._update(e);
       }
     };
-    const T = ["compiledMasks", "currentMaskRef", "currentMask"],
-      B = ["mask"];
+    const B = ["compiledMasks", "currentMaskRef", "currentMask"],
+      T = ["mask"];
     class L extends p {
       constructor(e) {
         super(Object.assign({}, L.DEFAULTS, e)), (this.currentMask = null);
@@ -3195,7 +3195,7 @@
       }
       set state(e) {
         const { compiledMasks: t, currentMaskRef: s, currentMask: n } = e,
-          a = i(e, T);
+          a = i(e, B);
         this.compiledMasks.forEach((e, s) => (e.state = t[s])),
           null != s && ((this.currentMask = s), (this.currentMask.state = n)),
           (super.state = a);
@@ -3252,7 +3252,7 @@
             if (!e[s]) return;
             const n = e[s],
               { mask: a } = n;
-            return c(t, i(n, B)) && t.maskEquals(a);
+            return c(t, i(n, T)) && t.maskEquals(a);
           })
         );
       }
@@ -3332,7 +3332,7 @@
     try {
       globalThis.IMask = n;
     } catch (e) {}
-    class q {
+    class R {
       constructor(e) {
         let t = {
           logging: !0,
@@ -3602,7 +3602,7 @@
         this.options.logging && U(`[Попапос]: ${e}`);
       }
     }
-    class R {
+    class q {
       constructor(e, t = null) {
         if (
           ((this.config = Object.assign({ init: !0, logging: !0 }, e)),
@@ -4497,7 +4497,7 @@
       },
       Fe = null,
       Me = null;
-    function Te() {
+    function Be() {
       if (null === Fe) {
         if ("undefined" == typeof document) return (Fe = 0);
         var e = document.body,
@@ -4508,7 +4508,7 @@
       }
       return Fe;
     }
-    function Be(e) {
+    function Te(e) {
       return e && e.ownerDocument && e.ownerDocument.defaultView
         ? e.ownerDocument.defaultView
         : window;
@@ -4553,30 +4553,30 @@
       var s;
       e && (s = e.classList).add.apply(s, t.split(" "));
     }
-    function qe(e, t) {
+    function Re(e, t) {
       e &&
         t.split(" ").forEach(function (t) {
           e.classList.remove(t);
         });
     }
-    function Re(e) {
+    function qe(e) {
       return ".".concat(e.split(" ").join("."));
     }
     var Ve = Object.freeze({
         __proto__: null,
-        getElementWindow: Be,
+        getElementWindow: Te,
         getElementDocument: Le,
         getOptions: Pe,
         addClasses: Ie,
-        removeClasses: qe,
-        classNamesToQuery: Re,
+        removeClasses: Re,
+        classNamesToQuery: qe,
       }),
-      Ne = Be,
+      Ne = Te,
       je = Le,
       We = Pe,
       $e = Ie,
-      ze = qe,
-      He = Re,
+      ze = Re,
+      He = qe,
       Ye = (function () {
         function e(t, s) {
           void 0 === s && (s = {});
@@ -4877,9 +4877,9 @@
                 "scrollbarWidth" in document.documentElement.style ||
                 "-ms-overflow-style" in document.documentElement.style
                 ? 0
-                : Te();
+                : Be();
             } catch (e) {
-              return Te();
+              return Be();
             }
           }),
           (e.getOffset = function (e) {
@@ -5577,9 +5577,21 @@
     var Qe = document.getElementById("selector");
     IMask(Qe, { mask: "+{7}(000)000-00-00" });
     (window.FLS = !0),
+      (function (e) {
+        let t = new Image();
+        (t.onload = t.onerror =
+          function () {
+            e(2 == t.height);
+          }),
+          (t.src =
+            "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA");
+      })(function (e) {
+        let t = !0 === e ? "webp" : "no-webp";
+        document.documentElement.classList.add(t);
+      }),
       V.any() && document.documentElement.classList.add("touch"),
-      new q({}),
       new R({}),
+      new q({}),
       (function () {
         const e = document.querySelectorAll(
           "input[placeholder],textarea[placeholder]"
