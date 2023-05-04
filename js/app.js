@@ -5576,7 +5576,12 @@
       });
     var Qe = document.getElementById("selector");
     IMask(Qe, { mask: "+{7}(000)000-00-00" });
-    (window.FLS = !0),
+    document
+      .querySelectorAll("[data-default]")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+      }),
+      (window.FLS = !0),
       V.any() && document.documentElement.classList.add("touch"),
       new q({}),
       new R({}),
