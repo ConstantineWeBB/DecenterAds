@@ -1,0 +1,143 @@
+// <SELECT>
+// Снипет (HTML): sel
+.select {
+	@media (max-width:$mobile) {
+			:first-child & {
+				order: -2;
+			}
+		}
+	position: relative;
+	// .select__body
+	&__body {
+		position: relative;
+		border-radius: 30px;
+		background-color: #016B9F;
+		border: 1px solid #F6F6F6;
+		padding: 14px 30px;
+			
+	}
+	// .select__title
+	&__title {
+		color: inherit;
+		text-align: left;
+		cursor: pointer;
+		width: 100%;
+		color: rgb(62, 60, 60);
+		
+		
+	}
+	// .select__value
+	&__value {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: row-reverse;
+		
+		&:before {
+			content: "";
+			background: url('@img/icons/arrow.svg') 0 5px no-repeat;
+			align-self: stretch;
+			flex: 0 0 20px;
+			transition: all 0.3s ease 0s;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			._select-open & {
+				transform: rotate(-180deg);
+			}
+		}
+	}
+	// .select__text
+	&__text {
+		flex: 1 1 auto;
+		
+	}
+	&__input {
+		width: 100%;
+		background-color: transparent;
+		height: 100%;
+		
+	}
+	// .select__options
+	&__options {
+		color: #000;
+		position: absolute;
+		top: 33px;
+		border-radius: 0 0 30px 30px;
+		min-width: 100%;
+		left: 0;
+		background: #b2e3ff;
+		border-top: 0;
+		border: 1px solid #B2E3FFD9;
+		border-top: 0;
+		padding:  10px 0 20px 0;
+		z-index: -1;
+	}
+	// .select__scroll
+	&__scroll {
+		overflow-y: auto;
+		overflow-x: hidden;
+		// Максимальная высота
+		max-height: 200px;
+		// Стили скроллбара
+		.simplebar-scrollbar {
+			&::before {
+				//opacity: 1;
+				background-color: #FF9728;
+			}
+		}
+	}
+	// .select__option
+	&__option {
+		width: 100%;
+		display: block;
+		text-align: left;
+		cursor: pointer;
+		padding: 5px 15px;
+		color: inherit;
+		border-radius: 0 0 20px 20px;
+		&:nth-child(1){
+			padding-top: 20px;
+		}
+		
+		
+		&._select-selected {
+			background-color: #eee;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background: #d9d9d9;
+			}
+		}
+	}
+
+	// Конструкция дополнительных данных
+	&__row {
+		display: inline-flex;
+		align-items: center;
+	}
+	&__asset {
+	}
+	&__text {
+	}
+
+	// Состояния селекта
+	&._select-open {
+		z-index: 5;
+	}
+	&._select-disabled {
+	}
+	&._select-active {
+	}
+	&._select-focus {
+	}
+	&._select-multiple {
+	}
+	&._select-checkbox {
+	}
+}
+
+// Тег
+._select-tag {
+	cursor: pointer;
+}

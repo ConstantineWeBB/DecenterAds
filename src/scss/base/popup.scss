@@ -1,0 +1,201 @@
+body::after {
+	content: "";
+	background-color: rgba(0, 0, 0, 0.5);
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity 0.8s ease 0s;
+	pointer-events: none;
+	z-index: 149;
+}
+body.popup-show::after {
+	opacity: 1;
+}
+.popup {
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 30px 10px;
+	transition: visibility 0.8s ease 0s;
+	visibility: hidden;
+	pointer-events: none;
+}
+.popup_show {
+	z-index: 150;
+	visibility: visible;
+	overflow: auto;
+	pointer-events: auto;
+}
+.popup_show .popup__content {
+	visibility: visible;
+	transform: scale(1);
+}
+.popup__wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: 100%;
+	flex: 1 1 auto;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.popup__content {
+	visibility: hidden;
+	transform: scale(0);
+	transition: transform 0.3s ease 0s;
+	background: linear-gradient(327.75deg, #0080BF 9.35%, #00496C 117.99%);
+	max-width: 875px;
+	border-radius: 50px;
+	@include adaptiveValue("padding",78 ,20 );
+	.lock & {
+		visibility: visible;
+	}
+	@media (min-width:$mobile){
+		width: 100%;
+	}
+
+}
+
+//========================================================================================================================================================
+.popup {
+	// .popup__wrapper
+
+	&__wrapper {
+
+	}
+
+	// .popup__content
+
+	&__content {
+	}
+
+	// .popup__close
+
+	&__close {
+		position: absolute;
+		top: 5%;
+		right: 5%;
+		cursor: pointer;
+		@include adaptiveValue("width",30 ,20 );
+		@include adaptiveValue("height", 30, 20);
+		--weight: 2px;
+		--aa: 1px;
+		/* anti-aliasing */
+		--color: #FF9728;
+		border-radius: 3px;
+		background:
+			linear-gradient(45deg, transparent calc(50% - var(--weight) - var(--aa)), var(--color) calc(50% - var(--weight)), var(--color) calc(50% + var(--weight)), transparent calc(50% + var(--weight) + var(--aa))),
+			linear-gradient(-45deg, transparent calc(50% - var(--weight) - var(--aa)), var(--color) calc(50% - var(--weight)), var(--color) calc(50% + var(--weight)), transparent calc(50% + var(--weight) + var(--aa)));
+			animation: spin 5s linear 0s infinite;
+		@media (any-hover: hover) {
+			&:hover {
+				@keyframes spin {
+						from {
+							transform: rotate(0deg);
+						}
+				
+						to {
+							transform: rotate(360deg);
+						}
+					}
+			}
+		}
+		
+	}
+
+	// .popup__title
+
+	&__title {
+		@include adaptiveValue("font-size",40 ,20 );
+		@include adaptiveValue("line-height",49 ,29 );
+		padding-right: 30px;
+			font-weight: 700;
+			text-align: left;
+			color: #F9F9F9;
+	}
+
+	// .popup__form
+
+	&__form {
+		
+	}
+}
+
+.form-popup {
+	display: grid;
+	gap: 40px;
+	// .form-popup__column
+
+	&__column {
+		display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			@media (max-width:$mobile) {
+				grid-template-columns: repeat(1, 1fr);
+			}
+			gap: 15px;
+			
+	}
+		
+	
+	// .form-popup__icon-for-input
+
+	&__icon-for-input {
+		.form-popup__input{
+			background-color: #017CB9;
+		}
+		position: relative;
+		
+		&:before {
+				content: "";
+				position: absolute;
+				background: url('@img/icons/calendar.svg') 0 0 no-repeat;
+				cursor: pointer;
+				width: 20px;
+				height: 20px;
+				top: 15px;
+				right: 20px;
+				pointer-events: none;
+			}
+	}
+
+		
+	// .form-popup__input
+
+	&__input {
+		border-radius: 30px;
+		background-color: transparent;
+		border: 1px solid #F6F6F6;
+		padding: 14px 30px;
+		width: 100%;
+		position: relative;
+		z-index: 1;
+	}
+
+	// .form-popup__select
+
+	&__select {
+		
+	}
+
+	// .form-popup__button
+
+	&__button {
+		justify-self: center;
+	}
+
+	.form__error {
+		color: red;
+		position: absolute;
+		transform: translate(50%,-90% );
+		font-size: rem(50);
+		z-index: 1;
+	}
+}
+

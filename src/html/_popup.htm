@@ -1,0 +1,43 @@
+
+<div id="form" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close"></button>
+			<form data-dev method="POST" action="#" class="popup__form form-popup">
+				<div class="popup__title">Book a session with our specialist</div>
+				<div class="form-popup__column">
+					<div><input data-required autocomplete="off" type="text" name="form[]" data-error="*" placeholder="Frist name" class="form-popup__input"></div>
+					<div><input data-required autocomplete="off" type="text" name="form[]" data-error="*" placeholder="Last name" class="form-popup__input"></div>
+					<div><input data-required autocomplete="off" type="email" name="form[]" data-error="*" placeholder="Work email" class="form-popup__input"></div>
+					<div><input data-required autocomplete="off" type="tel" name="form[]" data-error="*" id="selector" placeholder="Work Phone" class="form-popup__input"></div>
+				</div>
+				<div class="form-popup__column">
+					<select data-scroll name="form[]" class="form-popup__select">
+						<option value="1" selected>Country</option>
+						<option value="2">Пункт №2</option>
+						<option value="3">Пункт №3</option>
+						<option value="4">Пункт №4</option>
+						<option value="4">Пункт №5</option>
+						<option value="4">Пункт №6</option>
+						<option value="4">Пункт №7</option>
+					</select>
+					<div><input data-required autocomplete="off" type="text" name="form[]" data-error="*" placeholder="Company Name" class="form-popup__input"></div>
+					<select data-scroll name="form[]" class="form-popup__select">
+						<option value="1" selected>Business Category</option>
+						<option value="2">Пункт №2</option>
+						<option value="3">Пункт №3</option>
+						<option value="4">Пункт №4</option>
+						<option value="4">Пункт №5</option>
+						<option value="4">Пункт №6</option>
+						<option value="4">Пункт №7</option>
+					</select>
+					<div class="form-popup__icon-for-input">
+						<input data-required calendar autocomplete="off" type="text" readonly style="cursor: pointer" name="form[]" data-error="*" placeholder="Select the date" class="form-popup__input">
+					</div>
+				</div>
+				<button type="submit" class="form-popup__button button button_wide">Send</button>
+			</form>
+		</div>
+	</div>
+</div>
+
