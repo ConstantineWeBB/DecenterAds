@@ -1310,12 +1310,7 @@ body.popup-show::after {
     padding-bottom: 3.75rem;
   }
 }
-@media (min-width: 75.5em) {
-  .smorgasbord_padding-middleblock {
-    padding-top: 0rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 75.5em) {
+@media (min-width: 20em) and (max-width: 0.0625em) {
   .smorgasbord_padding-middleblock {
     padding-top: clamp( 0rem , 0rem  +  0vw , 0rem );
   }
@@ -1340,12 +1335,7 @@ body.popup-show::after {
     padding-bottom: 3.75rem;
   }
 }
-@media (min-width: 75.5em) {
-  .smorgasbord_padding-lastblock {
-    padding-top: 0rem;
-  }
-}
-@media (min-width: 20em) and (max-width: 75.5em) {
+@media (min-width: 20em) and (max-width: 0.0625em) {
   .smorgasbord_padding-lastblock {
     padding-top: clamp( 0rem , 0rem  +  0vw , 0rem );
   }
